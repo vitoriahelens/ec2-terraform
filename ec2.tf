@@ -15,12 +15,13 @@ resource "aws_instance" "server" {
   //user_data                   = file("./install_file.sh") //Nesse trecho eu chamo o código reponsável pela instalação do apache e docker
   key_name                    = aws_key_pair.sshkey.key_name
   user_data = <<-EOF
-  #!/bin/bash
-  echo "*** Installing apache2"
-  sudo apt update -y
-  sudo apt install apache2 -y
-  echo "*** Completed Installing apache2"
-  EOF
+#!/bin/bash
+echo "*** Installing apache2"
+sudo apt update -y
+sudo apt install apache2 -y
+echo "*** Completed Installing apache2"
+EOF
+
   tags = {
     Name        = var.name
     Environment = var.env
