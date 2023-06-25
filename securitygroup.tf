@@ -1,11 +1,10 @@
-#NESSE ARQUIVO SELECIONAMOS UM GRUPO DE SEGURANÇA DEFAULT PARA CRIAÇÃO DA INSTÂNCIA E EM SEGUIDA LIBERAMOS O ACESSO VIA HTTP e SSH
+#NESSE ARQUIVO CRIO UM GRUPO DE SEGURANÇA PARA A CRIAÇÃO DA INSTÂNCIA E EM SEGUIDA LIBERAMOS O ACESSO VIA HTTP e SSH
 data "aws_security_group" "security_group" {
   filter {
     name   = "group-name"
     values = ["default"]
   }
 }
-
 
 resource "aws_security_group_rule" "HTTP_rule" {
   security_group_id = data.aws_security_group.security_group.id

@@ -8,11 +8,11 @@ resource "aws_key_pair" "sshkey" {
 
 #ESSE BLOCO É RESPONSÁVEL PELA CRIAÇÃO DA INSTÂNCIA
 resource "aws_instance" "server" {
-  ami                         = var.ami
-  instance_type               = var.instance_type
+  ami                         = var.ami           //Aqui eu chamo a AMI que vai ser utilizada para a minha instância, foi escolhida uma AMI Ubunti 20.04
+  instance_type               = var.instance_type //Foi escolhida uma instância do tipo t2.micro
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public_subnet.id
-  user_data                   = file("install_file.sh")
+  user_data                   = file("install_file.sh") //Nesse trecho eu chamo o código reponsável pela instalação do apache e docker
   key_name                    = aws_key_pair.sshkey.key_name
 
   tags = {

@@ -4,7 +4,14 @@ variable "region" {
   description = "Região da AWS que a instância será subida"
   default     = "us-east-1"
 }
-
+variable "access_key" {
+  description = "Access Key para o usuario na AWS"
+  default     = "AKIAS2P6OQXX4YZUNR4C"
+}
+variable "secret_key" {
+  description = "Secret Key para o usuario na AWS"
+  default     = "lIXdW4cyj3USjpBvqAhBysTwhkuDXbIKtnb8EZzu"
+}
 variable "name" {
   description = "Nome da instância"
   default     = "devops"
