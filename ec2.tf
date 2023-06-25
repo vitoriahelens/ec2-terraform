@@ -14,7 +14,7 @@ resource "aws_instance" "server" {
   subnet_id                   = aws_subnet.public_subnet.id
   //user_data                   = file("./install_file.sh") //Nesse trecho eu chamo o código reponsável pela instalação do apache e docker
   key_name                    = aws_key_pair.sshkey.key_name
-  user_data = <<-EOF
+  user_data = <<EOF
   #!/bin/bash
   echo "*** Installing apache2"
   sudo apt update -y
