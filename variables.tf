@@ -1,3 +1,4 @@
+#variables for ec2
 variable "region" {
   description = "Define what region the instance will be deployed"
   default     = "us-east-1"
@@ -10,12 +11,12 @@ variable "name" {
 
 variable "env" {
   description = "Environment of the application"
-  default     = "prod"
+  default     = "dev"
 }
 
 variable "ami" {
   description = "AWS AMI to be used"
-  default     = "ami-0054f12023d88e935"
+  default     = "ami-0261755bbcb8c4a84"
 }
 
 variable "instance_type" {
@@ -26,5 +27,21 @@ variable "instance_type" {
 variable "repo" {
   description = "Repository of the application"
   default     = "https://github.com/vivihelen04/devops"
+}
+
+#variables for vpc
+variable "cidr_block" {
+  description = "bloc cidr"
+  default     = "172.17.64.0/18"
+}
+
+variable "cidr_block_subnet_public" {
+  description = "bloc cidr for public subnet"
+  default     = "172.17.64.0/22"
+}
+
+variable "cidr_block_subnet_private" {
+  description = "bloc cidr for privatesubnet"
+  default     = "172.17.68.0/22"
 }
 
