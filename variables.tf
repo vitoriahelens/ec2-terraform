@@ -1,56 +1,47 @@
-#NESSE ARQUIVO FICAM TODAS AS VARIÁVEIS UTILIZADAS NOS DEMAIS
-#Variáveis utilizadas na criação da instância 
+#variables for ec2
 variable "region" {
-  description = "Região da AWS que a instância será subida"
+  description = "Define what region the instance will be deployed"
   default     = "us-east-1"
 }
-variable "access_key" {
-  description = "Access Key para o usuario na AWS"
-  default     = "AKIAS2P6OQXX4YZUNR4C"
-}
-variable "secret_key" {
-  description = "Secret Key para o usuario na AWS"
-  default     = "lIXdW4cyj3USjpBvqAhBysTwhkuDXbIKtnb8EZzu"
-}
+
 variable "name" {
-  description = "Nome da instância"
+  description = "Name of the application"
   default     = "devops"
 }
 
 variable "env" {
-  description = "Tipo de ambiente que será a instância"
+  description = "Environment of the application"
   default     = "dev"
 }
 
 variable "ami" {
-  description = "Modelo padrão de uma AMI Ubuntu da AWS"
+  description = "AWS AMI to be used"
   default     = "ami-0261755bbcb8c4a84"
 }
 
 variable "instance_type" {
-  description = "Configuração padrão do hardware da instância EC2"
+  description = "AWS instance type defines the hardware configuration of the machine"
   default     = "t2.micro"
 }
 
 variable "repo" {
-  description = "Repositória utilizado para salvar a aplicação"
+  description = "Repository of the application"
   default     = "https://github.com/vivihelen04/devops"
 }
 
-#Variáveis utilizadas na criação da VPC
+#variables for vpc
 variable "cidr_block" {
-  description = "IP utilizado para a criação da VPC"
+  description = "bloc cidr"
   default     = "172.17.64.0/18"
 }
 
 variable "cidr_block_subnet_public" {
-  description = "IP utilizado para a criação da subnet pública"
+  description = "bloc cidr for public subnet"
   default     = "172.17.64.0/22"
 }
 
 variable "cidr_block_subnet_private" {
-  description = "IP utilizado para a criação da subnet privada"
+  description = "bloc cidr for privatesubnet"
   default     = "172.17.68.0/22"
 }
-
 

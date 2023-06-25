@@ -1,4 +1,4 @@
-resource "docker_image" "devops-php-image" {
+/*resource "docker_image" "devops-php-image" {
   name = "devops-php-image"
 }
 
@@ -10,4 +10,4 @@ resource "docker_container" "php_container" {
     internal = 80
     external = 8080
   }
-}
+}*/

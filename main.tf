@@ -1,8 +1,5 @@
-#ESSE ARQUIVO MAIN É UTILIZADO PARA REALIZAR CONEXÕES COM A API DA AWS E DOCKER
 provider "aws" {
-  region     = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
+  region = var.region
 }
 
 terraform {

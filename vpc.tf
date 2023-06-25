@@ -13,4 +13,3 @@ resource "aws_subnet" "private_subnet" {
   vpc_id     = aws_vpc.vpc_devops.id
   cidr_block = var.cidr_block_subnet_private
 }
-
