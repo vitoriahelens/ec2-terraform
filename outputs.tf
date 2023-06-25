@@ -7,3 +7,7 @@ output "public_dns" {
   value = aws_instance.server.public_dns
 }
 
+output "vpc" {
+  value = aws_vpc.vpc_devops.id
+}
+
