@@ -45,9 +45,5 @@ variable "cidr_block_subnet_private" {
   description = "IP utilizado para a criação da subnet privada"
   default     = "172.17.68.0/22"
 }
-######
-variable "public_subnets" {
-  description = "IP utilizado para a criação da subnet pública"
-  default     = ["172.17.62.0/22"]
-}
+
 
