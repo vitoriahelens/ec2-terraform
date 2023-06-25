@@ -1,3 +1,4 @@
+#NESSE ARQUIVO SELECIONAMOS UM GRUPO DE SEGURANÇA DEFAULT E EM SEGUIDA LIBERAMOS O ACESSO TCP PARA A PORTA 80
 data "aws_security_group" "security_group" {
   filter {
     name   = "group-name"
