@@ -1,5 +1,4 @@
 #ARQUIVO UTILIZADO PARA A CRIAÇÃO DA INSTÂNCIA EC2
-
 #NESSE TRECHO É FEITA A DEFINIÇÃO DE UMA CHAVE SSH VINCULADA A MINHA INSTÂNCIA
 resource "aws_key_pair" "sshkey" {
   key_name   = "devops"
@@ -13,7 +12,7 @@ resource "aws_instance" "server" {
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public_subnet.id
   key_name                    = aws_key_pair.sshkey.key_name
-  user_data                   = file("./install_file.sh")
+  user_data                   = file("./install_file.sh") //Nesse trecho de código eu chamo o arquivo que contem os comandos de instalação do docker dentro da minha instância
 
   tags = {
     Name        = var.name
