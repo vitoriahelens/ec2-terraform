@@ -1,0 +1,10 @@
+#SCRIPT UTILIZADO NO JENKINS PARA BUSCAR EM UMA S3 UM ARQUIVO E PUBLICAR EM UM CONTAINER
+
+#BUSCANDO ARQUIVO PHP DENTRO DO S3
+aws s3 cp s3://devops-s3/hello-world.php ./hello-world.php
+
+#COPIANDO O ARQUIVO PARA DENTRO DO CONTAINER
+docker cp hello-world.php apache-server:/var/www/html/
+
+#REINICANDO O CONTAINER
+docker restart apache-server
